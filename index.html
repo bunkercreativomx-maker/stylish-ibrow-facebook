@@ -1,107 +1,241 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stylish iBrow — Revisión Campaña Facebook 30 días</title>
+<title>Stylish iBrow — 30-Day Facebook Content</title>
 <style>
-  :root{--bg:#0f0f12;--card:#1a1a20;--pink:#e91e8c;--gold:#d4af37;--txt:#f2f2f2;--muted:#9a9aa5}
+  :root{--bg:#0d0d10;--card:#16161c;--pink:#e91e8c;--gold:#d4af37;--txt:#f2f2f2;--muted:#9a9aa5}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;padding:24px}
-  .wrap{max-width:920px;margin:0 auto}
-  header{text-align:center;padding:32px 16px;border-bottom:1px solid #2a2a32;margin-bottom:24px}
-  h1{font-size:28px;background:linear-gradient(90deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{text-align:center;padding:30px 16px;border-bottom:1px solid #24242c;margin-bottom:24px}
+  h1{font-size:30px;background:linear-gradient(90deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
   .sub{color:var(--muted);font-size:14px;margin-top:8px}
-  .hero{display:flex;justify-content:center;margin:24px 0}
-  .hero img{max-width:380px;width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(233,30,140,.25)}
-  .tag{display:inline-block;background:var(--pink);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
-  .card{background:var(--card);border-radius:14px;padding:18px 20px;margin:14px 0;border:1px solid #26262e}
-  .card h3{font-size:15px;color:var(--gold);margin-bottom:6px}
-  .card .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
-  .card p{font-size:14px}
-  .week{font-size:13px;color:var(--pink);font-weight:700;margin:22px 0 6px;text-transform:uppercase;letter-spacing:1px}
-  .strat li{margin:6px 0 6px 18px;font-size:14px}
-  .approve{margin-top:32px;padding:20px;background:#16161c;border:1px dashed var(--gold);border-radius:14px;text-align:center}
-  .approve h2{color:var(--gold);font-size:18px;margin-bottom:10px}
-  .btn{display:inline-block;background:var(--pink);color:#fff;padding:10px 22px;border-radius:24px;font-weight:700;text-decoration:none;margin:6px}
-  .btn.no{background:#333}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid #24242c;position:relative}
+  .card img{width:100%;display:block}
+  .day{position:absolute;top:10px;left:10px;background:var(--pink);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:20px}
+  .cap{padding:14px 16px}
+  .cap h3{font-size:15px;color:var(--gold);margin-bottom:6px}
+  .cap p{font-size:13px;color:var(--txt)}
+  .approve{margin-top:34px;padding:24px;background:#14141a;border:1px dashed var(--gold);border-radius:16px;text-align:center}
+  .approve h2{color:var(--gold);font-size:20px;margin-bottom:12px}
+  .note{font-size:13px;color:var(--muted);margin:10px 0}
+  .btn{display:inline-block;border:none;cursor:pointer;padding:13px 26px;border-radius:26px;font-weight:800;font-size:15px;margin:8px}
+  .btn.ok{background:var(--pink);color:#fff}
+  .btn.no{background:#333;color:#fff}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  #status{margin-top:14px;font-size:14px;min-height:20px}
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <span class="tag">BORRADOR PARA REVISIÓN DEL CLIENTE</span>
-    <h1>Stylish iBrow · Campaña Facebook 30 días</h1>
-    <p class="sub">11360 Montwood Dr Ste G, El Paso, TX 79936 · 📞 915-867-1989 · El Paso, TX</p>
+    <span class="tag" style="background:var(--pink);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700">CLIENT REVIEW — 30 DAYS FACEBOOK CONTENT</span>
+    <h1>Stylish iBrow · El Paso, TX</h1>
+    <p class="sub">11360 Montwood Dr Ste G, El Paso, TX 79936 · 📞 915-867-1989 · All copy & offers in English</p>
   </header>
 
-  <div class="hero">
-    <img src="assets/stylish-ad.png" alt="Publicidad de prueba Stylish iBrow">
+  <div class="grid">
+    <div class="card">
+      <div class="day">DAY 01</div>
+      <img loading="lazy" src="images/day01.png" alt="Stylish iBrow Day 01 - Meet Stylish iBrow">
+      <div class="cap"><h3>Meet Stylish iBrow</h3><p>Your beauty home in Montwood — threading, nails, lashes, waxing & henna. Clean & chic, walk-ins welcome.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 02</div>
+      <img loading="lazy" src="images/day02.png" alt="Stylish iBrow Day 02 - Perfect Brows in 15 Minutes">
+      <div class="cap"><h3>Perfect Brows in 15 Minutes</h3><p>Expert eyebrow threading. Precise, gentle, done fast. Book today.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 03</div>
+      <img loading="lazy" src="images/day03.png" alt="Stylish iBrow Day 03 - Everything in One Place">
+      <div class="cap"><h3>Everything in One Place</h3><p>Threading • Nails • Lashes • Waxing • Henna. One stop for all your beauty.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 04</div>
+      <img loading="lazy" src="images/day04.png" alt="Stylish iBrow Day 04 - 100% Recommended">
+      <div class="cap"><h3>100% Recommended</h3><p>25+ happy clients in El Paso love their results. Real brows, real smiles.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 05</div>
+      <img loading="lazy" src="images/day05.png" alt="Stylish iBrow Day 05 - 15% Off New Clients">
+      <div class="cap"><h3>15% Off New Clients</h3><p>First visit? Use code IBROW15 and save on your first service.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 06</div>
+      <img loading="lazy" src="images/day06.png" alt="Stylish iBrow Day 06 - Clean & Chic Vibes">
+      <div class="cap"><h3>Clean & Chic Vibes</h3><p>Your relaxing beauty spot in Montwood. Professional, cozy, welcoming.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 07</div>
+      <img loading="lazy" src="images/day07.png" alt="Stylish iBrow Day 07 - Threading or Wax?">
+      <div class="cap"><h3>Threading or Wax?</h3><p>We do both — gentle and precise. You choose what feels best.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 08</div>
+      <img loading="lazy" src="images/day08.png" alt="Stylish iBrow Day 08 - Brow Lamination">
+      <div class="cap"><h3>Brow Lamination</h3><p>Fuller, feathered brows that last. Soft, natural, long-lasting.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 09</div>
+      <img loading="lazy" src="images/day09.png" alt="Stylish iBrow Day 09 - Brow Tuesday $12">
+      <div class="cap"><h3>Brow Tuesday $12</h3><p>Eyebrow threading just $12 every Tuesday. Walk-ins welcome.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 10</div>
+      <img loading="lazy" src="images/day10.png" alt="Stylish iBrow Day 10 - Glowing Skin Starts Here">
+      <div class="cap"><h3>Glowing Skin Starts Here</h3><p>Facial threading for a smooth, polished finish.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 11</div>
+      <img loading="lazy" src="images/day11.png" alt="Stylish iBrow Day 11 - Find Your Best Brow Shape">
+      <div class="cap"><h3>Find Your Best Brow Shape</h3><p>Arch, soft or straight — we design the brows that fit your face.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 12</div>
+      <img loading="lazy" src="images/day12.png" alt="Stylish iBrow Day 12 - Defined Brows, No Makeup">
+      <div class="cap"><h3>Defined Brows, No Makeup</h3><p>Brow tinting for everyday depth and shape.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 13</div>
+      <img loading="lazy" src="images/day13.png" alt="Stylish iBrow Day 13 - Bring a Friend — 10% Off">
+      <div class="cap"><h3>Bring a Friend — 10% Off</h3><p>Both of you save this weekend. Beauty is better together.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 14</div>
+      <img loading="lazy" src="images/day14.png" alt="Stylish iBrow Day 14 - Myth: Threading Thins Hair">
+      <div class="cap"><h3>Myth: Threading Thins Hair</h3><p>False. Gentle and precise every time, healthy full brows.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 15</div>
+      <img loading="lazy" src="images/day15.png" alt="Stylish iBrow Day 15 - Flawless Gel-X Nails">
+      <div class="cap"><h3>Flawless Gel-X Nails</h3><p>All styles, one place. Durable, custom, beautiful.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 16</div>
+      <img loading="lazy" src="images/day16.png" alt="Stylish iBrow Day 16 - Lash Lift That Wows">
+      <div class="cap"><h3>Lash Lift That Wows</h3><p>Natural lift, no extensions. Wake up beautiful.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 17</div>
+      <img loading="lazy" src="images/day17.png" alt="Stylish iBrow Day 17 - Pick Your Nail Style">
+      <div class="cap"><h3>Pick Your Nail Style</h3><p>6+ designs to choose from — gel, acrylic, press-ons.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 18</div>
+      <img loading="lazy" src="images/day18.png" alt="Stylish iBrow Day 18 - Henna Brows, No Needles">
+      <div class="cap"><h3>Henna Brows, No Needles</h3><p>Plant-based, soft, fuller-looking brows.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 19</div>
+      <img loading="lazy" src="images/day19.png" alt="Stylish iBrow Day 19 - Combo: Brows + Lashes">
+      <div class="cap"><h3>Combo: Brows + Lashes</h3><p>Save when you bundle your favorite services.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 20</div>
+      <img loading="lazy" src="images/day20.png" alt="Stylish iBrow Day 20 - Jelly Pedicure">
+      <div class="cap"><h3>Jelly Pedicure</h3><p>Soft, soothing, smooth feet. Relax and refresh.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 21</div>
+      <img loading="lazy" src="images/day21.png" alt="Stylish iBrow Day 21 - Keep Brows 30 Days">
+      <div class="cap"><h3>Keep Brows 30 Days</h3><p>Lamination aftercare tips from our experts.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 22</div>
+      <img loading="lazy" src="images/day22.png" alt="Stylish iBrow Day 22 - Clean & Chic, No Wait">
+      <div class="cap"><h3>Clean & Chic, No Wait</h3><p>5-star review from El Paso. Trusted and loved.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 23</div>
+      <img loading="lazy" src="images/day23.png" alt="Stylish iBrow Day 23 - Brow Tuesday $12">
+      <div class="cap"><h3>Brow Tuesday $12</h3><p>Every Tuesday, walk-ins welcome. No appointment needed.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 24</div>
+      <img loading="lazy" src="images/day24.png" alt="Stylish iBrow Day 24 - Clear, Honest Prices">
+      <div class="cap"><h3>Clear, Honest Prices</h3><p>Threading $14 • Lamination $45 • Gel $30. No surprises.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 25</div>
+      <img loading="lazy" src="images/day25.png" alt="Stylish iBrow Day 25 - Expert Technicians">
+      <div class="cap"><h3>Expert Technicians</h3><p>Gentle, precise, professional every single time.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 26</div>
+      <img loading="lazy" src="images/day26.png" alt="Stylish iBrow Day 26 - 15% Off New Clients">
+      <div class="cap"><h3>15% Off New Clients</h3><p>Book today, walk-ins welcome. Call 915.867.1989.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 27</div>
+      <img loading="lazy" src="images/day27.png" alt="Stylish iBrow Day 27 - Walk-Ins Welcome">
+      <div class="cap"><h3>Walk-Ins Welcome</h3><p>Come by 11360 Montwood Dr. Friendly, fast, no wait.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 28</div>
+      <img loading="lazy" src="images/day28.png" alt="Stylish iBrow Day 28 - Do We Take Walk-Ins?">
+      <div class="cap"><h3>Do We Take Walk-Ins?</h3><p>YES! No appointment needed — stop by anytime.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 29</div>
+      <img loading="lazy" src="images/day29.png" alt="Stylish iBrow Day 29 - Membership $29/mo">
+      <div class="cap"><h3>Membership $29/mo</h3><p>Unlimited brow threading. Best value in El Paso.</p></div>
+    </div>
+    <div class="card">
+      <div class="day">DAY 30</div>
+      <img loading="lazy" src="images/day30.png" alt="Stylish iBrow Day 30 - 30 Days, 30 Smiles">
+      <div class="cap"><h3>30 Days, 30 Smiles</h3><p>Thank you, El Paso! 15% off new clients — book yours today.</p></div>
+    </div>
   </div>
-  <p class="sub" style="text-align:center">↑ Imagen de prueba generada (publicidad real editable). Reemplazable por foto del salón/clienta real.</p>
-
-  <div class="card">
-    <h3>Estrategia recomendada</h3>
-    <ul class="strat">
-      <li><b>Ángulo ganador:</b> "Boutique de belleza completa en Montwood" — no solo threading. Nails + lashes + waxing + henna en un solo lugar, ambiente clean & chic (ya lo alaban en reseñas).</li>
-      <li><b>Ancla de precio:</b> threading $12 los martes (Brow Tuesday) para activar walk-ins y competir vs Thread of Elegance / Mayabrow ($10-12).</li>
-      <li><b>Prueba social diaria:</b> antes/después reales (la competencia lo hace y funciona). Pedir foto a cada clienta feliz.</li>
-      <li><b>Walk-ins bienvenidos</b> + respuesta rápida por FB/mensaje (la queja recurrente es horarios inconsistentes → publicar horario claro y cumplirlo).</li>
-      <li><b>Mezcla:</b> 80% valor/prueba social · 20% promo. 3-4 posts/semana en FB + Reels.</li>
-      <li><b>Hashtags locales:</b> #StylishiBrow #ElPasoBeauty #browthreading #Montwood #beautysalon</li>
-    </ul>
-  </div>
-
-  <div class="week">Semana 1 — Conócenos</div>
-  <div class="card"><h3>D1 · Presentación</h3><div class="meta">📷 Lunes</div><p>"Somos Stylish iBrow 💕 Tu boutique de belleza en Montwood. Threading, nails, lashes, waxing & henna. 📍11360 Montwood Dr · 📞915-867-1989" #ElPasoBeauty #StylishiBrow</p></div>
-  <div class="card"><h3>D2 · Reel antes/después</h3><div class="meta">🎥 Martes</div><p>"Perfect Brows in 15 Minutes ✨" + video transformación. #browthreading #ElPaso</p></div>
-  <div class="card"><h3>D3 · Carrusel servicios</h3><div class="meta">📊 Miércoles</div><p>"Todo en un lugar 💅👁️✨" 5 slides: threading, nails, waxing, lashes, henna. #beautysalon</p></div>
-  <div class="card"><h3>D4 · Testimonio</h3><div class="meta">📷 Jueves</div><p>Cliente feliz + ⭐ "100% recommend" (de tus 25 reseñas). #clientesfelices</p></div>
-  <div class="card"><h3>D5 · Promo nuevos</h3><div class="meta">🎉 Viernes</div><p>"New client 15% OFF tu primer servicio 💕 código IBROW15" #promo #ElPaso</p></div>
-  <div class="card"><h3>D6 · Salón</h3><div class="meta">📷 Sábado</div><p>Ambiente "clean & chic" del salón. #salonvibes</p></div>
-  <div class="card"><h3>D7 · Tip</h3><div class="meta">💡 Domingo</div><p>"¿Threading o cera? Te decimos las diferencias 👇" #beautytips</p></div>
-
-  <div class="week">Semana 2 — Especialidad Threading</div>
-  <div class="card"><h3>D8 · Laminación</h3><div class="meta">🎥 Lunes</div><p>Reel técnica brow lamination. #browlamination</p></div>
-  <div class="card"><h3>D9 · Brow Tuesday $12</h3><div class="meta">🎟️ Martes</div><p>"Martes de cejas 💕 Eyebrow threading $12 hoy" #browtuesday</p></div>
-  <div class="card"><h3>D10 · Facial threading</h3><div class="meta">📷 Miércoles</div><p>Antes/después facial threading. #glowingskin</p></div>
-  <div class="card"><h3>D11 · Tipos de ceja</h3><div class="meta">📊 Jueves</div><p>Carrusel: arco / recta / soft. "¿Cuál te va?" #browshapes</p></div>
-  <div class="card"><h3>D12 · Tintado</h3><div class="meta">📷 Viernes</div><p>Cliente con brow tint. "Cejas definidas sin maquillaje" #browtint</p></div>
-  <div class="card"><h3>D13 · Promo finde</h3><div class="meta">🎉 Sábado</div><p>"Bring a friend — 10% OFF en ambas" #weekend</p></div>
-  <div class="card"><h3>D14 · Mito</h3><div class="meta">💡 Domingo</div><p>"Mito: el threading adelgaza el pelo ❌" #myths</p></div>
-
-  <div class="week">Semana 3 — Nails & Lashes</div>
-  <div class="card"><h3>D15 · Gel-X</h3><div class="meta">📷 Lunes</div><p>Galería uñas Gel-X. #gelxnails #ElPasoNails</p></div>
-  <div class="card"><h3>D16 · Lash lift</h3><div class="meta">🎥 Martes</div><p>Reel transformación lash lift. #lashlift</p></div>
-  <div class="card"><h3>D17 · Diseños nails</h3><div class="meta">📊 Miércoles</div><p>Carrusel 6 diseños. "Elige tu estilo" #nailart</p></div>
-  <div class="card"><h3>D18 · Henna</h3><div class="meta">📷 Jueves</div><p>Henna brows natural. "Sin agujas" #hennabrows</p></div>
-  <div class="card"><h3>D19 · Combo</h3><div class="meta">🎉 Viernes</div><p>Promo "Combo brows + lashes" #combo</p></div>
-  <div class="card"><h3>D20 · Pedicure</h3><div class="meta">📷 Sábado</div><p>Jelly pedicure en acción. #pedicure</p></div>
-  <div class="card"><h3>D21 · Aftercare</h3><div class="meta">💡 Domingo</div><p>"Cómo cuidar tu laminación 30 días" #aftercare</p></div>
-
-  <div class="week">Semana 4 — Confianza + Cierre</div>
-  <div class="card"><h3>D22 · Reseña</h3><div class="meta">⭐ Lunes</div><p>Reseña real: "Clean and chic, no wait" #review</p></div>
-  <div class="card"><h3>D23 · Brow Tuesday</h3><div class="meta">🎟️ Martes</div><p>$12 cejas. #browtuesday</p></div>
-  <div class="card"><h3>D24 · Precios</h3><div class="meta">📊 Miércoles</div><p>Carrusel transparencia de precios. #precios</p></div>
-  <div class="card"><h3>D25 · Equipo</h3><div class="meta">📷 Jueves</div><p>Técnicas sonriendo. "Expert technicians" #team</p></div>
-  <div class="card"><h3>D26 · Promo cierre</h3><div class="meta">🎉 Viernes</div><p>"15% OFF nuevos + agenda hoy 📞" #booknow</p></div>
-  <div class="card"><h3>D27 · Tour</h3><div class="meta">🎥 Sábado</div><p>Reel tour del salón 30s. #salontour</p></div>
-  <div class="card"><h3>D28 · FAQ</h3><div class="meta">💡 Domingo</div><p>"¿Aceptan walk-ins? Sí ✅" #faq</p></div>
-
-  <div class="week">Semana 5 — Lealtad</div>
-  <div class="card"><h3>D29 · Membership</h3><div class="meta">📷 Lunes</div><p>"Membership ilimitado $29/mes (opcional)" #membership</p></div>
-  <div class="card"><h3>D30 · Gran cierre</h3><div class="meta">🎉 Martes</div><p>"30 días, 30 sonrisas. Gracias El Paso 💕" + promo mes.</p></div>
 
   <div class="approve">
-    <h2>✅ Aprobación del cliente</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">Revisa imagen de prueba y calendario. Al aprobar, pasamos a producción (fotos reales del salón + agendado).</p>
-    <a class="btn" href="#">APROBAR</a>
-    <a class="btn no" href="#">PEDIR CAMBIOS</a>
-    <p style="font-size:12px;color:var(--muted);margin-top:10px">Firma: ____________________  Fecha: __________</p>
+    <h2>✅ Client Approval</h2>
+    <p class="note">Review all 30 creatives. On submit, your response is saved to Supabase (project Aprovaciones) so we can see exactly what you decided.</p>
+    <button class="btn ok" id="btnApprove">APPROVE</button>
+    <button class="btn no" id="btnChanges">REQUEST CHANGES</button>
+    <div id="status"></div>
   </div>
 
-  <footer>Stylish iBrow Threading Salon · El Paso, TX · Generado para revisión del cliente · 2026</footer>
+  <footer>Stylish iBrow Threading Salon · El Paso, TX · Generated for client review · 2026</footer>
 </div>
+
+<script>
+/* ===== SUPABASE CONFIG — FILL WITH REAL VALUES ===== */
+const SUPABASE_URL = "https://nmykwwhpjukmlzhaimuu.supabase.co";
+const SUPABASE_ANON_KEY = "REPLACE_WITH_ANON_KEY";   /* paste anon key of project nmykwwhpjukmlzhaimuu */
+const CLIENT = "Stylish iBrow";
+const CAMPAIGN = "30-Day Facebook Content";
+/* ================================================== */
+
+async function submit(decision, comment){
+  const btnA=document.getElementById("btnApprove"), btnC=document.getElementById("btnChanges");
+  const st=document.getElementById("status");
+  if(SUPABASE_ANON_KEY==="REPLACE_WITH_ANON_KEY"){ st.style.color="#ff6b6b"; st.textContent="⚠️ Anon key not set. Ask the developer to paste SUPABASE_ANON_KEY."; return; }
+  btnA.disabled=btnC.disabled=true; st.style.color="var(--muted)"; st.textContent="Saving...";
+  const review = { decision, comment: comment||"", submitted_at: new Date().toISOString() };
+  try{
+    const r = await fetch(SUPABASE_URL+"/rest/v1/approvals",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
+      body: JSON.stringify({ client: CLIENT, campaign: CAMPAIGN, client_name: CLIENT, review })
+    });
+    if(!r.ok){ const t=await r.text(); throw new Error(t); }
+    st.style.color="var(--gold)"; st.textContent="✅ Saved to Supabase. Thank you!";
+  }catch(e){
+    st.style.color="#ff6b6b"; st.textContent="❌ Error: "+e.message;
+    btnA.disabled=btnC.disabled=false;
+  }
+}
+document.getElementById("btnApprove").onclick = ()=>{
+  const c=prompt("Optional comment for approval:",""); submit("approved", c);
+};
+document.getElementById("btnChanges").onclick = ()=>{
+  const c=prompt("What changes do you need?","");
+  if(c===null) return; submit("changes_requested", c);
+};
+</script>
 </body>
 </html>
