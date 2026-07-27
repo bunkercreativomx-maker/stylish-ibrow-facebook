@@ -205,7 +205,7 @@
 <script>
 /* ===== SUPABASE CONFIG — FILL WITH REAL VALUES ===== */
 const SUPABASE_URL = "https://nmykwwhpjukmlzhaimuu.supabase.co";
-const SUPABASE_ANON_KEY = "REPLACE_WITH_ANON_KEY";   /* paste anon key of project nmykwwhpjukmlzhaimuu */
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5teWt3d2hwanVrbWx6aGFpbXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwMTc3NzAsImV4cCI6MjEwMDU5Mzc3MH0.XAnVz_2Z8YpHYqSK8u_mYeS5o__ULVwi9SqqByVpE_o";
 const CLIENT = "Stylish iBrow";
 const CAMPAIGN = "30-Day Facebook Content";
 /* ================================================== */
@@ -213,7 +213,7 @@ const CAMPAIGN = "30-Day Facebook Content";
 async function submit(decision, comment){
   const btnA=document.getElementById("btnApprove"), btnC=document.getElementById("btnChanges");
   const st=document.getElementById("status");
-  if(SUPABASE_ANON_KEY==="REPLACE_WITH_ANON_KEY"){ st.style.color="#ff6b6b"; st.textContent="⚠️ Anon key not set. Ask the developer to paste SUPABASE_ANON_KEY."; return; }
+  if(!SUPABASE_ANON_KEY){ st.style.color="#ff6b6b"; st.textContent="⚠️ Anon key not set."; return; }
   btnA.disabled=btnC.disabled=true; st.style.color="var(--muted)"; st.textContent="Saving...";
   const review = { decision, comment: comment||"", submitted_at: new Date().toISOString() };
   try{
