@@ -20,14 +20,15 @@
   .sub b{color:var(--txt);font-weight:600}
   .section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.4vw,30px);font-weight:700;color:#fff;margin:54px 0 22px;display:flex;align-items:center;gap:14px;}
   .section-title::before{content:"";width:38px;height:2px;background:linear-gradient(90deg,var(--pink),var(--gold));border-radius:2px;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px;align-items:start;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .45s;box-shadow:0 10px 30px rgba(0,0,0,.35);}
   .card.ad{border-color:rgba(255,46,154,.35);box-shadow:0 14px 40px rgba(255,46,154,.12);}
   .card:hover{transform:translateY(-8px);border-color:rgba(255,122,192,.5);box-shadow:0 26px 60px rgba(255,46,154,.18);}
-  .imgwrap{position:relative;overflow:hidden;aspect-ratio:1/1;background:#15131c;}
-  .imgwrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
-  .card:hover .imgwrap img{transform:scale(1.06);}
-  .day,.badge{position:absolute;top:14px;left:14px;z-index:2;font-weight:800;font-size:12px;padding:6px 13px;border-radius:30px;letter-spacing:.5px;color:#fff;backdrop-filter:blur(6px);background:rgba(255,46,154,.85);box-shadow:0 4px 14px rgba(255,46,154,.4);}
+  /* imagen SIN recorte: se muestra completa */
+  .imgwrap{position:relative;overflow:hidden;background:#15131c;cursor:zoom-in;}
+  .imgwrap img{width:100%;height:auto;display:block;object-fit:contain;-webkit-user-drag:none;user-select:none;}
+  .card:hover .imgwrap{filter:brightness(1.04);}
+  .day,.badge{position:absolute;top:14px;left:14px;z-index:2;font-weight:800;font-size:12px;padding:6px 13px;border-radius:30px;letter-spacing:.5px;color:#fff;backdrop-filter:blur(6px);background:rgba(255,46,154,.85);box-shadow:0 4px 14px rgba(255,46,154,.4);pointer-events:none;}
   .badge{background:rgba(233,196,106,.9);color:#1a1408;box-shadow:0 4px 14px rgba(233,196,106,.4);}
   .cap{padding:18px 18px 20px}
   .cap h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25;}
@@ -52,6 +53,13 @@
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:54px;padding-top:26px;border-top:1px solid var(--line);}
   .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120px);background:linear-gradient(120deg,var(--pink),#ff5aae);color:#fff;padding:13px 24px;border-radius:30px;font-weight:600;font-size:14px;box-shadow:0 12px 36px rgba(255,46,154,.45);z-index:50;transition:transform .5s cubic-bezier(.2,.9,.2,1);pointer-events:none;}
   .toast.show{transform:translateX(-50%) translateY(0);}
+  /* LIGHTBOX - ver foto sola, sin descarga */
+  .lightbox{position:fixed;inset:0;background:rgba(8,6,12,.95);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;backdrop-filter:blur(8px);}
+  .lightbox.open{display:flex;animation:fadeUp .25s both;}
+  .lightbox img{max-width:92vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);-webkit-user-drag:none;user-select:none;}
+  .lbclose{position:absolute;top:20px;right:26px;color:#fff;font-size:30px;cursor:pointer;font-weight:700;line-height:1;opacity:.85;}
+  .lbclose:hover{opacity:1;}
+  .lbhint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#a39db0;font-size:12px;}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);}
   .reveal.in{opacity:1;transform:none;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -70,7 +78,7 @@
   <div class="grid">
     <article class="card ad reveal">
       <div class="badge">FB AD</div>
-      <div class="imgwrap"><img loading="lazy" src="images/ad1.png" alt="Ad 1 — Brow Tuesday $12 (Lead Capture)"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad1.png" alt="Ad 1 — Brow Tuesday $12 (Lead Capture)"></div>
       <div class="cap">
         <h3>Ad 1 — Brow Tuesday $12 (Lead Capture)</h3>
         <p class="obj">Objective · Leads / Walk-ins</p>
@@ -86,7 +94,7 @@
     </article>
     <article class="card ad reveal">
       <div class="badge">FB AD</div>
-      <div class="imgwrap"><img loading="lazy" src="images/ad2.png" alt="Ad 2 — 15% OFF New Clients"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad2.png" alt="Ad 2 — 15% OFF New Clients"></div>
       <div class="cap">
         <h3>Ad 2 — 15% OFF New Clients</h3>
         <p class="obj">Objective · New client acquisition</p>
@@ -102,7 +110,7 @@
     </article>
     <article class="card ad reveal">
       <div class="badge">FB AD</div>
-      <div class="imgwrap"><img loading="lazy" src="images/ad3.png" alt="Ad 3 — One Stop Beauty"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad3.png" alt="Ad 3 — One Stop Beauty"></div>
       <div class="cap">
         <h3>Ad 3 — One Stop Beauty</h3>
         <p class="obj">Objective · Awareness / Multi-service</p>
@@ -118,7 +126,7 @@
     </article>
     <article class="card ad reveal">
       <div class="badge">FB AD</div>
-      <div class="imgwrap"><img loading="lazy" src="images/ad4.png" alt="Ad 4 — Ladies Waxing (Women Only)"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad4.png" alt="Ad 4 — Ladies Waxing (Women Only)"></div>
       <div class="cap">
         <h3>Ad 4 — Ladies Waxing (Women Only)</h3>
         <p class="obj">Objective · Waxing service leads</p>
@@ -138,7 +146,7 @@
   <div class="grid">
     <article class="card reveal">
       <div class="day">DAY 01</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day01.png" alt="Stylish iBrow Day 01"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day01.png" alt="Stylish iBrow Day 01"></div>
       <div class="cap">
         <h3>Meet Stylish iBrow — El Paso's Beauty Secret</h3>
         <p class="body">Tired of driving all over town for nails, brows and lashes? We do it ALL under one roof — threading, Gel-X, waxing, lamination & henna. Clean, chic and walk-in friendly. 📍11360 Montwood Dr · Call 915.867.1989.</p>
@@ -153,7 +161,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 02</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day02.png" alt="Stylish iBrow Day 02"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day02.png" alt="Stylish iBrow Day 02"></div>
       <div class="cap">
         <h3>Perfect Brows in 15 Minutes — Not 45</h3>
         <p class="body">Our threading techs shape flawless arches fast and gentle. No redness, no wait. Join 25+ El Paso clients who already love their brows. Book today or walk in!</p>
@@ -168,7 +176,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 03</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day03.png" alt="Stylish iBrow Day 03"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day03.png" alt="Stylish iBrow Day 03"></div>
       <div class="cap">
         <h3>One Stop. Every Beauty Service.</h3>
         <p class="body">Why bounce between 3 salons? Threading + Nails + Lashes + Waxing + Henna, all at Stylish iBrow. Save time, save gas, look amazing. 📞 915.867.1989.</p>
@@ -183,7 +191,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 04</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day04.png" alt="Stylish iBrow Day 04"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day04.png" alt="Stylish iBrow Day 04"></div>
       <div class="cap">
         <h3>Don't Take Our Word — Take Theirs ⭐⭐⭐⭐⭐</h3>
         <p class="body">25+ 5-star reviews: 'Clean and chic, no wait.' Real results, real smiles. See why El Paso chooses Stylish iBrow for brows that actually fit your face.</p>
@@ -198,7 +206,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 05</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day05.png" alt="Stylish iBrow Day 05"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day05.png" alt="Stylish iBrow Day 05"></div>
       <div class="cap">
         <h3>New Here? 15% OFF Your First Visit 🎁</h3>
         <p class="body">First-time client code IBROW15 saves you 15% on any service. Flawless brows, gorgeous nails — for less. Claim it today, walk-ins welcome!</p>
@@ -213,7 +221,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 06</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day06.png" alt="Stylish iBrow Day 06"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day06.png" alt="Stylish iBrow Day 06"></div>
       <div class="cap">
         <h3>Your Relaxing Beauty Spot in Montwood</h3>
         <p class="body">Soft lighting, spotless stations, friendly faces. Getting beautiful shouldn't feel like a chore. Come see the Stylish iBrow difference.</p>
@@ -228,7 +236,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 07</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day07.png" alt="Stylish iBrow Day 07"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day07.png" alt="Stylish iBrow Day 07"></div>
       <div class="cap">
         <h3>Threading or Wax? We Do BOTH.</h3>
         <p class="body">Sensitive skin? Threading is gentler and more precise. Prefer wax? We've got you. You pick — we deliver perfect brows either way.</p>
@@ -243,7 +251,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 08</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day08.png" alt="Stylish iBrow Day 08"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day08.png" alt="Stylish iBrow Day 08"></div>
       <div class="cap">
         <h3>Brow Lamination: Full, Feathered, Lasting</h3>
         <p class="body">Turn thin or messy brows into a polished, lifted look that lasts weeks. Low maintenance, high impact. Book your lamination this week!</p>
@@ -258,7 +266,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 09</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day09.png" alt="Stylish iBrow Day 09"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day09.png" alt="Stylish iBrow Day 09"></div>
       <div class="cap">
         <h3>🔥 BROW TUESDAY = $12 Threading</h3>
         <p class="body">Every Tuesday, eyebrow threading is just $12. Set your brows right without breaking the bank. Walk in — no appointment needed.</p>
@@ -273,7 +281,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 10</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day10.png" alt="Stylish iBrow Day 10"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day10.png" alt="Stylish iBrow Day 10"></div>
       <div class="cap">
         <h3>Glowing Skin Starts With Smooth Edges</h3>
         <p class="body">Facial threading clears fuzz for a flawless makeup base and smoother skin. Quick, clean, confidence-boosting. Try it this week.</p>
@@ -288,7 +296,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 11</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day11.png" alt="Stylish iBrow Day 11"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day11.png" alt="Stylish iBrow Day 11"></div>
       <div class="cap">
         <h3>Find the Brow Shape Made for YOUR Face</h3>
         <p class="body">Arch, soft or straight — our techs design brows that flatter your features, not a template. Book a custom brow design today.</p>
@@ -303,7 +311,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 12</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day12.png" alt="Stylish iBrow Day 12"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day12.png" alt="Stylish iBrow Day 12"></div>
       <div class="cap">
         <h3>Defined Brows — Even With Zero Makeup</h3>
         <p class="body">Brow tinting adds depth and shape that lasts. Wake up with perfect brows every day. Ask about tinting on your next visit.</p>
@@ -318,7 +326,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 13</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day13.png" alt="Stylish iBrow Day 13"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day13.png" alt="Stylish iBrow Day 13"></div>
       <div class="cap">
         <h3>Smooth Skin, Done Right 🪒</h3>
         <p class="body">Body & facial waxing by certified pros — hygienic, fast, effective. Silky results, zero stress. Women's services available. Book your waxing at Stylish iBrow, El Paso.</p>
@@ -333,7 +341,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 14</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day14.png" alt="Stylish iBrow Day 14"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day14.png" alt="Stylish iBrow Day 14"></div>
       <div class="cap">
         <h3>Myth: 'Threading Thins Your Hair'</h3>
         <p class="body">False. Done right (we do it right), threading is gentle and precise — your brows stay healthy and full. Facts over fear.</p>
@@ -348,7 +356,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 15</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day15.png" alt="Stylish iBrow Day 15"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day15.png" alt="Stylish iBrow Day 15"></div>
       <div class="cap">
         <h3>Flawless Gel-X Nails, All Styles</h3>
         <p class="body">From nude elegance to bold art, our Gel-X lasts and protects your natural nail. One place, endless looks. 📞 915.867.1989.</p>
@@ -363,7 +371,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 16</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day16.png" alt="Stylish iBrow Day 16"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day16.png" alt="Stylish iBrow Day 16"></div>
       <div class="cap">
         <h3>Lash Lift That Wows — No Extensions</h3>
         <p class="body">Get curled, lifted lashes that look natural and last weeks. Wake up gorgeous, skip the glue. Book your lift today.</p>
@@ -378,7 +386,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 17</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day17.png" alt="Stylish iBrow Day 17"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day17.png" alt="Stylish iBrow Day 17"></div>
       <div class="cap">
         <h3>Pick Your Nail Personality 💅</h3>
         <p class="body">6+ designs: Gel, Acrylic, Builder Gel, Press-ons. Whether you're minimal or maximal, we've got your match. Come see us.</p>
@@ -393,7 +401,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 18</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day18.png" alt="Stylish iBrow Day 18"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day18.png" alt="Stylish iBrow Day 18"></div>
       <div class="cap">
         <h3>Henna Brows — Full, Soft, No Needles</h3>
         <p class="body">Plant-based tint gives fuller-looking brows with zero needles. Perfect for a soft, natural boost. Ask about henna!</p>
@@ -408,7 +416,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 19</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day19.png" alt="Stylish iBrow Day 19"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day19.png" alt="Stylish iBrow Day 19"></div>
       <div class="cap">
         <h3>Bundle Brows + Lashes, Save More 💸</h3>
         <p class="body">Combine your favorite services and save. Brows + lash lift = total transformation for less. Book the combo today.</p>
@@ -423,7 +431,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 20</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day20.png" alt="Stylish iBrow Day 20"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day20.png" alt="Stylish iBrow Day 20"></div>
       <div class="cap">
         <h3>Jelly Pedicure = Soft, Happy Feet</h3>
         <p class="body">Soothing jelly soak, smooth finish, polish perfection. Treat your feet to the relax they deserve. Walk-ins welcome.</p>
@@ -438,7 +446,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 21</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day21.png" alt="Stylish iBrow Day 21"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day21.png" alt="Stylish iBrow Day 21"></div>
       <div class="cap">
         <h3>Keep Those Brows Perfect 30 Days</h3>
         <p class="body">Lamination aftercare tips from our pros: avoid water 24h, brush daily, skip oil serums. Make your look last.</p>
@@ -453,7 +461,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 22</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day22.png" alt="Stylish iBrow Day 22"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day22.png" alt="Stylish iBrow Day 22"></div>
       <div class="cap">
         <h3>Brazilian Waxing — Gentle & Private 🌸</h3>
         <p class="body">Ladies only, always professional and discreet. Brazilian waxing done right with minimal discomfort. You deserve to feel confident. 📍11360 Montwood Dr · 📞915.867.1989.</p>
@@ -468,7 +476,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 23</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day23.png" alt="Stylish iBrow Day 23"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day23.png" alt="Stylish iBrow Day 23"></div>
       <div class="cap">
         <h3>BROW TUESDAY $12 — Every Week</h3>
         <p class="body">Your weekly brow fix is here. $12 threading, walk-ins welcome, no appointment. Set your arches straight (pun intended).</p>
@@ -483,7 +491,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 24</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day24.png" alt="Stylish iBrow Day 24"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day24.png" alt="Stylish iBrow Day 24"></div>
       <div class="cap">
         <h3>Honest Prices, No Surprises 💵</h3>
         <p class="body">Threading $14 · Lamination $45 · Gel $30 · Waxing from $12. Clear menus, fair rates. Beauty without the guesswork.</p>
@@ -498,7 +506,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 25</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day25.png" alt="Stylish iBrow Day 25"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day25.png" alt="Stylish iBrow Day 25"></div>
       <div class="cap">
         <h3>Expert Hands, Gentle Touch</h3>
         <p class="body">Our technicians train for precision and comfort. Nervous about threading? You're in calm, capable hands. Book with confidence.</p>
@@ -513,7 +521,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 26</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day26.png" alt="Stylish iBrow Day 26"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day26.png" alt="Stylish iBrow Day 26"></div>
       <div class="cap">
         <h3>15% OFF New Clients — Call Now 📞</h3>
         <p class="body">First visit? Code IBROW15. Walk-ins welcome, same-day spots often open. 915.867.1989 — your brows will thank you.</p>
@@ -528,7 +536,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 27</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day27.png" alt="Stylish iBrow Day 27"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day27.png" alt="Stylish iBrow Day 27"></div>
       <div class="cap">
         <h3>Toe BBL — Sculpted, Pretty Feet 🦶</h3>
         <p class="body">Our Toe BBL reshapes and polishes for flawless, camera-ready toes. Pair it with a Jelly Pedicure. Walk in, leave glowing.</p>
@@ -543,7 +551,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 28</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day28.png" alt="Stylish iBrow Day 28"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day28.png" alt="Stylish iBrow Day 28"></div>
       <div class="cap">
         <h3>Lash Clusters — Soft, Full, You 💫</h3>
         <p class="body">Customizable lash clusters for a fluffy, natural look in one visit. No glue damage, all glow. Add them to your brow day!</p>
@@ -558,7 +566,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 29</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day29.png" alt="Stylish iBrow Day 29"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day29.png" alt="Stylish iBrow Day 29"></div>
       <div class="cap">
         <h3>Head & Scalp Massage — Pure Calm 🧖</h3>
         <p class="body">Melt stress with our natural-oil scalp massage. Wellness isn't a luxury — it's self-care. Add it to any service.</p>
@@ -573,7 +581,7 @@
     </article>
     <article class="card reveal">
       <div class="day">DAY 30</div>
-      <div class="imgwrap"><img loading="lazy" src="images/day30.png" alt="Stylish iBrow Day 30"></div>
+      <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day30.png" alt="Stylish iBrow Day 30"></div>
       <div class="cap">
         <h3>30 Days, 30 Smiles — Thank You, El Paso 💕</h3>
         <p class="body">We celebrated a month of beauty with you. New clients still get 15% OFF. Book yours and join the Stylish iBrow family.</p>
@@ -591,6 +599,11 @@
   <footer>Stylish iBrow Threading Salon · El Paso, TX · Prepared for client review · 2026</footer>
 </div>
 <div class="toast" id="toast"></div>
+<div class="lightbox" id="lightbox" onclick="closeLight(event)">
+  <span class="lbclose" onclick="closeLight(event)">✕</span>
+  <img id="lightImg" src="" alt="" draggable="false" oncontextmenu="return false;">
+  <span class="lbhint">Click outside to close</span>
+</div>
 
 <script>
 const SUPABASE_URL="https://nmykwwhpjukmlzhaimuu.supabase.co";
@@ -598,6 +611,10 @@ const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 const CLIENT="Stylish iBrow";
 const CAMPAIGN="30-Day Facebook Content + Month Ads";
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600);}
+// LIGHTBOX
+function openLight(src){const l=document.getElementById("lightbox");document.getElementById("lightImg").src=src;l.classList.add("open");document.body.style.overflow="hidden";}
+function closeLight(e){if(e.target.id!=="lightImg"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow="";}}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow="";}});
 async function save(btn, decision){
   const day=btn.dataset.day, type=btn.dataset.type;
   const ta=document.getElementById("notes-"+type+"-"+day);
