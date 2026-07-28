@@ -20,7 +20,6 @@
   .sub b{color:var(--txt);font-weight:600}
   .section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.4vw,30px);font-weight:700;color:#fff;margin:54px 0 22px;display:flex;align-items:center;gap:14px;}
   .section-title::before{content:"";width:38px;height:2px;background:linear-gradient(90deg,var(--pink),var(--gold));border-radius:2px;}
-  /* 4 columnas en desktop */
   .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start;}
   @media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
   @media(max-width:820px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
@@ -34,11 +33,8 @@
   .day,.badge{position:absolute;top:14px;left:14px;z-index:2;font-weight:800;font-size:12px;padding:6px 13px;border-radius:30px;letter-spacing:.5px;color:#fff;backdrop-filter:blur(6px);background:rgba(255,46,154,.85);box-shadow:0 4px 14px rgba(255,46,154,.4);pointer-events:none;}
   .badge{background:rgba(233,196,106,.9);color:#1a1408;box-shadow:0 4px 14px rgba(233,196,106,.4);}
   .cap{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;}
-  .cap h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25;}
-  .obj{font-size:10.5px;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:7px;font-weight:600;}
-  .body{font-size:12.5px;color:var(--muted);margin-bottom:12px;}
-  .copybox{background:rgba(0,0,0,.28);border:1px dashed rgba(255,255,255,.14);border-radius:10px;padding:11px 13px;font-size:11px;color:#c8c2d4;white-space:pre-wrap;margin-bottom:14px;line-height:1.5;}
-  .copybox b{color:var(--gold2);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;}
+  .copybox{background:rgba(0,0,0,.28);border:1px dashed rgba(255,255,255,.14);border-radius:10px;padding:13px 15px;font-size:12.5px;color:#d6d0e0;white-space:pre-wrap;margin-bottom:14px;line-height:1.55;}
+  .copybox b{color:var(--gold2);font-size:10px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;}
   .actions{display:flex;gap:10px;margin-bottom:11px;}
   .btn{flex:1;border:none;cursor:pointer;padding:12px 10px;border-radius:13px;font-weight:700;font-size:13px;color:#fff;position:relative;overflow:hidden;transition:transform .25s,box-shadow .3s,filter .3s;font-family:inherit;}
   .btn.ok{background:linear-gradient(120deg,var(--pink),#ff5aae);box-shadow:0 8px 22px rgba(255,46,154,.32);}
@@ -53,7 +49,6 @@
   .notes::placeholder{color:#6f6980;}
   .status{margin-top:9px;font-size:11.5px;min-height:15px;font-weight:500;opacity:0;transform:translateY(4px);transition:opacity .3s,transform .3s;}
   .status.show{opacity:1;transform:translateY(0);}
-  /* barra enviar global */
   .sendbar{position:sticky;bottom:18px;margin:34px auto 0;max-width:900px;background:rgba(20,16,26,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,46,154,.35);border-radius:18px;padding:18px 22px;display:flex;align-items:center;gap:18px;box-shadow:0 20px 50px rgba(0,0,0,.5);}
   .sendbar .info{flex:1;font-size:13px;color:var(--muted);}
   .sendbar .info b{color:var(--txt);}
@@ -88,9 +83,6 @@
       <div class="badge">FB AD</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad1.png" alt="Ad 1 — Brow Tuesday $12 (Lead Capture)"></div>
       <div class="cap">
-        <h3>Ad 1 — Brow Tuesday $12 (Lead Capture)</h3>
-        <p class="obj">Objective · Leads / Walk-ins</p>
-        <p class="body">🔥 BROW TUESDAY = $12. Get flawless eyebrows every Tuesday at Stylish iBrow, El Paso. Walk-ins welcome, no appointment. Limited day — book your spot! 📍11360 Montwood Dr Ste G · 📞915.867.1989.</p>
         <div class="copybox"><b>Ad Copy</b><br>🔥 BROW TUESDAY = $12. Get flawless eyebrows every Tuesday at Stylish iBrow, El Paso. Walk-ins welcome, no appointment. Limited day — book your spot! 📍11360 Montwood Dr Ste G · 📞915.867.1989.</div>
         <div class="actions">
           <button class="btn ok" data-day="1" data-type="ad" onclick="approve(this)">✓ Approve</button>
@@ -104,9 +96,6 @@
       <div class="badge">FB AD</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad2.png" alt="Ad 2 — 15% OFF New Clients"></div>
       <div class="cap">
-        <h3>Ad 2 — 15% OFF New Clients</h3>
-        <p class="obj">Objective · New client acquisition</p>
-        <p class="body">NEW CLIENTS: 15% OFF your first visit with code IBROW15. Threading, nails, lashes, waxing & more — all in one chic spot in Montwood. Claim your glow today. 📞915.867.1989.</p>
         <div class="copybox"><b>Ad Copy</b><br>NEW CLIENTS: 15% OFF your first visit with code IBROW15. Threading, nails, lashes, waxing & more — all in one chic spot in Montwood. Claim your glow today. 📞915.867.1989.</div>
         <div class="actions">
           <button class="btn ok" data-day="2" data-type="ad" onclick="approve(this)">✓ Approve</button>
@@ -120,9 +109,6 @@
       <div class="badge">FB AD</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad3.png" alt="Ad 3 — One Stop Beauty"></div>
       <div class="cap">
-        <h3>Ad 3 — One Stop Beauty</h3>
-        <p class="obj">Objective · Awareness / Multi-service</p>
-        <p class="body">Why visit 3 salons? Stylish iBrow does it ALL — threading, Gel-X nails, lash lifts, waxing, henna. One stop, total transformation. Book now, walk-ins welcome. 📍11360 Montwood Dr.</p>
         <div class="copybox"><b>Ad Copy</b><br>Why visit 3 salons? Stylish iBrow does it ALL — threading, Gel-X nails, lash lifts, waxing, henna. One stop, total transformation. Book now, walk-ins welcome. 📍11360 Montwood Dr.</div>
         <div class="actions">
           <button class="btn ok" data-day="3" data-type="ad" onclick="approve(this)">✓ Approve</button>
@@ -136,9 +122,6 @@
       <div class="badge">FB AD</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/ad4.png" alt="Ad 4 — Ladies Waxing (Women Only)"></div>
       <div class="cap">
-        <h3>Ad 4 — Ladies Waxing (Women Only)</h3>
-        <p class="obj">Objective · Waxing service leads</p>
-        <p class="body">LADIES: Gentle, private Brazilian & body waxing by certified pros. Comfortable, hygienic, discreet. You deserve to feel confident. 📍11360 Montwood Dr Ste G · 📞915.867.1989.</p>
         <div class="copybox"><b>Ad Copy</b><br>LADIES: Gentle, private Brazilian & body waxing by certified pros. Comfortable, hygienic, discreet. You deserve to feel confident. 📍11360 Montwood Dr Ste G · 📞915.867.1989.</div>
         <div class="actions">
           <button class="btn ok" data-day="4" data-type="ad" onclick="approve(this)">✓ Approve</button>
@@ -156,9 +139,11 @@
       <div class="day">DAY 01</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day01.png" alt="Stylish iBrow Day 01"></div>
       <div class="cap">
-        <h3>Meet Stylish iBrow — El Paso's Beauty Secret</h3>
-        <p class="body">Tired of driving all over town for nails, brows and lashes? We do it ALL under one roof — threading, Gel-X, waxing, lamination & henna. Clean, chic and walk-in friendly. 📍11360 Montwood Dr · Call 915.867.1989.</p>
-        <div class="copybox"><b>FB Copy</b><br>Meet Stylish iBrow — El Paso's Beauty Secret<br><br>Tired of driving all over town for nails, brows and lashes? We do it ALL under one roof — threading, Gel-X, waxing, lamination & henna. Clean, chic and walk-in friendly. 📍11360 Montwood Dr · Call 915.867.1989.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Meet Stylish iBrow — El Paso's Beauty Secret
+
+Tired of driving all over town for nails, brows and lashes? We do it ALL under one roof — threading, Gel-X, waxing, lamination & henna. Clean, chic and walk-in friendly. 📍11360 Montwood Dr · Call 915.867.1989.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="1" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="1" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -171,9 +156,11 @@
       <div class="day">DAY 02</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day02.png" alt="Stylish iBrow Day 02"></div>
       <div class="cap">
-        <h3>Perfect Brows in 15 Minutes — Not 45</h3>
-        <p class="body">Our threading techs shape flawless arches fast and gentle. No redness, no wait. Join 25+ El Paso clients who already love their brows. Book today or walk in!</p>
-        <div class="copybox"><b>FB Copy</b><br>Perfect Brows in 15 Minutes — Not 45<br><br>Our threading techs shape flawless arches fast and gentle. No redness, no wait. Join 25+ El Paso clients who already love their brows. Book today or walk in!<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Perfect Brows in 15 Minutes — Not 45
+
+Our threading techs shape flawless arches fast and gentle. No redness, no wait. Join 25+ El Paso clients who already love their brows. Book today or walk in!
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="2" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="2" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -186,9 +173,11 @@
       <div class="day">DAY 03</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day03.png" alt="Stylish iBrow Day 03"></div>
       <div class="cap">
-        <h3>One Stop. Every Beauty Service.</h3>
-        <p class="body">Why bounce between 3 salons? Threading + Nails + Lashes + Waxing + Henna, all at Stylish iBrow. Save time, save gas, look amazing. 📞 915.867.1989.</p>
-        <div class="copybox"><b>FB Copy</b><br>One Stop. Every Beauty Service.<br><br>Why bounce between 3 salons? Threading + Nails + Lashes + Waxing + Henna, all at Stylish iBrow. Save time, save gas, look amazing. 📞 915.867.1989.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>One Stop. Every Beauty Service.
+
+Why bounce between 3 salons? Threading + Nails + Lashes + Waxing + Henna, all at Stylish iBrow. Save time, save gas, look amazing. 📞 915.867.1989.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="3" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="3" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -201,9 +190,11 @@
       <div class="day">DAY 04</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day04.png" alt="Stylish iBrow Day 04"></div>
       <div class="cap">
-        <h3>Don't Take Our Word — Take Theirs ⭐⭐⭐⭐⭐</h3>
-        <p class="body">25+ 5-star reviews: 'Clean and chic, no wait.' Real results, real smiles. See why El Paso chooses Stylish iBrow for brows that actually fit your face.</p>
-        <div class="copybox"><b>FB Copy</b><br>Don't Take Our Word — Take Theirs ⭐⭐⭐⭐⭐<br><br>25+ 5-star reviews: 'Clean and chic, no wait.' Real results, real smiles. See why El Paso chooses Stylish iBrow for brows that actually fit your face.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Don't Take Our Word — Take Theirs ⭐⭐⭐⭐⭐
+
+25+ 5-star reviews: 'Clean and chic, no wait.' Real results, real smiles. See why El Paso chooses Stylish iBrow for brows that actually fit your face.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="4" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="4" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -216,9 +207,11 @@
       <div class="day">DAY 05</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day05.png" alt="Stylish iBrow Day 05"></div>
       <div class="cap">
-        <h3>New Here? 15% OFF Your First Visit 🎁</h3>
-        <p class="body">First-time client code IBROW15 saves you 15% on any service. Flawless brows, gorgeous nails — for less. Claim it today, walk-ins welcome!</p>
-        <div class="copybox"><b>FB Copy</b><br>New Here? 15% OFF Your First Visit 🎁<br><br>First-time client code IBROW15 saves you 15% on any service. Flawless brows, gorgeous nails — for less. Claim it today, walk-ins welcome!<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>New Here? 15% OFF Your First Visit 🎁
+
+First-time client code IBROW15 saves you 15% on any service. Flawless brows, gorgeous nails — for less. Claim it today, walk-ins welcome!
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="5" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="5" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -231,9 +224,11 @@
       <div class="day">DAY 06</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day06.png" alt="Stylish iBrow Day 06"></div>
       <div class="cap">
-        <h3>Your Relaxing Beauty Spot in Montwood</h3>
-        <p class="body">Soft lighting, spotless stations, friendly faces. Getting beautiful shouldn't feel like a chore. Come see the Stylish iBrow difference.</p>
-        <div class="copybox"><b>FB Copy</b><br>Your Relaxing Beauty Spot in Montwood<br><br>Soft lighting, spotless stations, friendly faces. Getting beautiful shouldn't feel like a chore. Come see the Stylish iBrow difference.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Your Relaxing Beauty Spot in Montwood
+
+Soft lighting, spotless stations, friendly faces. Getting beautiful shouldn't feel like a chore. Come see the Stylish iBrow difference.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="6" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="6" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -246,9 +241,11 @@
       <div class="day">DAY 07</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day07.png" alt="Stylish iBrow Day 07"></div>
       <div class="cap">
-        <h3>Threading or Wax? We Do BOTH.</h3>
-        <p class="body">Sensitive skin? Threading is gentler and more precise. Prefer wax? We've got you. You pick — we deliver perfect brows either way.</p>
-        <div class="copybox"><b>FB Copy</b><br>Threading or Wax? We Do BOTH.<br><br>Sensitive skin? Threading is gentler and more precise. Prefer wax? We've got you. You pick — we deliver perfect brows either way.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Threading or Wax? We Do BOTH.
+
+Sensitive skin? Threading is gentler and more precise. Prefer wax? We've got you. You pick — we deliver perfect brows either way.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="7" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="7" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -261,9 +258,11 @@
       <div class="day">DAY 08</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day08.png" alt="Stylish iBrow Day 08"></div>
       <div class="cap">
-        <h3>Brow Lamination: Full, Feathered, Lasting</h3>
-        <p class="body">Turn thin or messy brows into a polished, lifted look that lasts weeks. Low maintenance, high impact. Book your lamination this week!</p>
-        <div class="copybox"><b>FB Copy</b><br>Brow Lamination: Full, Feathered, Lasting<br><br>Turn thin or messy brows into a polished, lifted look that lasts weeks. Low maintenance, high impact. Book your lamination this week!<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Brow Lamination: Full, Feathered, Lasting
+
+Turn thin or messy brows into a polished, lifted look that lasts weeks. Low maintenance, high impact. Book your lamination this week!
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="8" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="8" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -276,9 +275,11 @@
       <div class="day">DAY 09</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day09.png" alt="Stylish iBrow Day 09"></div>
       <div class="cap">
-        <h3>🔥 BROW TUESDAY = $12 Threading</h3>
-        <p class="body">Every Tuesday, eyebrow threading is just $12. Set your brows right without breaking the bank. Walk in — no appointment needed.</p>
-        <div class="copybox"><b>FB Copy</b><br>🔥 BROW TUESDAY = $12 Threading<br><br>Every Tuesday, eyebrow threading is just $12. Set your brows right without breaking the bank. Walk in — no appointment needed.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>🔥 BROW TUESDAY = $12 Threading
+
+Every Tuesday, eyebrow threading is just $12. Set your brows right without breaking the bank. Walk in — no appointment needed.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="9" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="9" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -291,9 +292,11 @@
       <div class="day">DAY 10</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day10.png" alt="Stylish iBrow Day 10"></div>
       <div class="cap">
-        <h3>Glowing Skin Starts With Smooth Edges</h3>
-        <p class="body">Facial threading clears fuzz for a flawless makeup base and smoother skin. Quick, clean, confidence-boosting. Try it this week.</p>
-        <div class="copybox"><b>FB Copy</b><br>Glowing Skin Starts With Smooth Edges<br><br>Facial threading clears fuzz for a flawless makeup base and smoother skin. Quick, clean, confidence-boosting. Try it this week.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Glowing Skin Starts With Smooth Edges
+
+Facial threading clears fuzz for a flawless makeup base and smoother skin. Quick, clean, confidence-boosting. Try it this week.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="10" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="10" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -306,9 +309,11 @@
       <div class="day">DAY 11</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day11.png" alt="Stylish iBrow Day 11"></div>
       <div class="cap">
-        <h3>Find the Brow Shape Made for YOUR Face</h3>
-        <p class="body">Arch, soft or straight — our techs design brows that flatter your features, not a template. Book a custom brow design today.</p>
-        <div class="copybox"><b>FB Copy</b><br>Find the Brow Shape Made for YOUR Face<br><br>Arch, soft or straight — our techs design brows that flatter your features, not a template. Book a custom brow design today.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Find the Brow Shape Made for YOUR Face
+
+Arch, soft or straight — our techs design brows that flatter your features, not a template. Book a custom brow design today.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="11" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="11" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -321,9 +326,11 @@
       <div class="day">DAY 12</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day12.png" alt="Stylish iBrow Day 12"></div>
       <div class="cap">
-        <h3>Defined Brows — Even With Zero Makeup</h3>
-        <p class="body">Brow tinting adds depth and shape that lasts. Wake up with perfect brows every day. Ask about tinting on your next visit.</p>
-        <div class="copybox"><b>FB Copy</b><br>Defined Brows — Even With Zero Makeup<br><br>Brow tinting adds depth and shape that lasts. Wake up with perfect brows every day. Ask about tinting on your next visit.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Defined Brows — Even With Zero Makeup
+
+Brow tinting adds depth and shape that lasts. Wake up with perfect brows every day. Ask about tinting on your next visit.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="12" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="12" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -336,9 +343,11 @@
       <div class="day">DAY 13</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day13.png" alt="Stylish iBrow Day 13"></div>
       <div class="cap">
-        <h3>Smooth Skin, Done Right 🪒</h3>
-        <p class="body">Body & facial waxing by certified pros — hygienic, fast, effective. Silky results, zero stress. Women's services available. Book your waxing at Stylish iBrow, El Paso.</p>
-        <div class="copybox"><b>FB Copy</b><br>Smooth Skin, Done Right 🪒<br><br>Body & facial waxing by certified pros — hygienic, fast, effective. Silky results, zero stress. Women's services available. Book your waxing at Stylish iBrow, El Paso.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Smooth Skin, Done Right 🪒
+
+Body & facial waxing by certified pros — hygienic, fast, effective. Silky results, zero stress. Women's services available. Book your waxing at Stylish iBrow, El Paso.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="13" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="13" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -351,9 +360,11 @@
       <div class="day">DAY 14</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day14.png" alt="Stylish iBrow Day 14"></div>
       <div class="cap">
-        <h3>Myth: 'Threading Thins Your Hair'</h3>
-        <p class="body">False. Done right (we do it right), threading is gentle and precise — your brows stay healthy and full. Facts over fear.</p>
-        <div class="copybox"><b>FB Copy</b><br>Myth: 'Threading Thins Your Hair'<br><br>False. Done right (we do it right), threading is gentle and precise — your brows stay healthy and full. Facts over fear.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Myth: 'Threading Thins Your Hair'
+
+False. Done right (we do it right), threading is gentle and precise — your brows stay healthy and full. Facts over fear.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="14" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="14" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -366,9 +377,11 @@
       <div class="day">DAY 15</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day15.png" alt="Stylish iBrow Day 15"></div>
       <div class="cap">
-        <h3>Flawless Gel-X Nails, All Styles</h3>
-        <p class="body">From nude elegance to bold art, our Gel-X lasts and protects your natural nail. One place, endless looks. 📞 915.867.1989.</p>
-        <div class="copybox"><b>FB Copy</b><br>Flawless Gel-X Nails, All Styles<br><br>From nude elegance to bold art, our Gel-X lasts and protects your natural nail. One place, endless looks. 📞 915.867.1989.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Flawless Gel-X Nails, All Styles
+
+From nude elegance to bold art, our Gel-X lasts and protects your natural nail. One place, endless looks. 📞 915.867.1989.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="15" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="15" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -381,9 +394,11 @@
       <div class="day">DAY 16</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day16.png" alt="Stylish iBrow Day 16"></div>
       <div class="cap">
-        <h3>Lash Lift That Wows — No Extensions</h3>
-        <p class="body">Get curled, lifted lashes that look natural and last weeks. Wake up gorgeous, skip the glue. Book your lift today.</p>
-        <div class="copybox"><b>FB Copy</b><br>Lash Lift That Wows — No Extensions<br><br>Get curled, lifted lashes that look natural and last weeks. Wake up gorgeous, skip the glue. Book your lift today.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Lash Lift That Wows — No Extensions
+
+Get curled, lifted lashes that look natural and last weeks. Wake up gorgeous, skip the glue. Book your lift today.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="16" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="16" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -396,9 +411,11 @@
       <div class="day">DAY 17</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day17.png" alt="Stylish iBrow Day 17"></div>
       <div class="cap">
-        <h3>Pick Your Nail Personality 💅</h3>
-        <p class="body">6+ designs: Gel, Acrylic, Builder Gel, Press-ons. Whether you're minimal or maximal, we've got your match. Come see us.</p>
-        <div class="copybox"><b>FB Copy</b><br>Pick Your Nail Personality 💅<br><br>6+ designs: Gel, Acrylic, Builder Gel, Press-ons. Whether you're minimal or maximal, we've got your match. Come see us.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Pick Your Nail Personality 💅
+
+6+ designs: Gel, Acrylic, Builder Gel, Press-ons. Whether you're minimal or maximal, we've got your match. Come see us.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="17" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="17" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -411,9 +428,11 @@
       <div class="day">DAY 18</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day18.png" alt="Stylish iBrow Day 18"></div>
       <div class="cap">
-        <h3>Henna Brows — Full, Soft, No Needles</h3>
-        <p class="body">Plant-based tint gives fuller-looking brows with zero needles. Perfect for a soft, natural boost. Ask about henna!</p>
-        <div class="copybox"><b>FB Copy</b><br>Henna Brows — Full, Soft, No Needles<br><br>Plant-based tint gives fuller-looking brows with zero needles. Perfect for a soft, natural boost. Ask about henna!<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Henna Brows — Full, Soft, No Needles
+
+Plant-based tint gives fuller-looking brows with zero needles. Perfect for a soft, natural boost. Ask about henna!
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="18" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="18" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -426,9 +445,11 @@
       <div class="day">DAY 19</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day19.png" alt="Stylish iBrow Day 19"></div>
       <div class="cap">
-        <h3>Bundle Brows + Lashes, Save More 💸</h3>
-        <p class="body">Combine your favorite services and save. Brows + lash lift = total transformation for less. Book the combo today.</p>
-        <div class="copybox"><b>FB Copy</b><br>Bundle Brows + Lashes, Save More 💸<br><br>Combine your favorite services and save. Brows + lash lift = total transformation for less. Book the combo today.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Bundle Brows + Lashes, Save More 💸
+
+Combine your favorite services and save. Brows + lash lift = total transformation for less. Book the combo today.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="19" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="19" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -441,9 +462,11 @@
       <div class="day">DAY 20</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day20.png" alt="Stylish iBrow Day 20"></div>
       <div class="cap">
-        <h3>Jelly Pedicure = Soft, Happy Feet</h3>
-        <p class="body">Soothing jelly soak, smooth finish, polish perfection. Treat your feet to the relax they deserve. Walk-ins welcome.</p>
-        <div class="copybox"><b>FB Copy</b><br>Jelly Pedicure = Soft, Happy Feet<br><br>Soothing jelly soak, smooth finish, polish perfection. Treat your feet to the relax they deserve. Walk-ins welcome.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Jelly Pedicure = Soft, Happy Feet
+
+Soothing jelly soak, smooth finish, polish perfection. Treat your feet to the relax they deserve. Walk-ins welcome.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="20" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="20" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -456,9 +479,11 @@
       <div class="day">DAY 21</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day21.png" alt="Stylish iBrow Day 21"></div>
       <div class="cap">
-        <h3>Keep Those Brows Perfect 30 Days</h3>
-        <p class="body">Lamination aftercare tips from our pros: avoid water 24h, brush daily, skip oil serums. Make your look last.</p>
-        <div class="copybox"><b>FB Copy</b><br>Keep Those Brows Perfect 30 Days<br><br>Lamination aftercare tips from our pros: avoid water 24h, brush daily, skip oil serums. Make your look last.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Keep Those Brows Perfect 30 Days
+
+Lamination aftercare tips from our pros: avoid water 24h, brush daily, skip oil serums. Make your look last.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="21" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="21" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -471,9 +496,11 @@
       <div class="day">DAY 22</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day22.png" alt="Stylish iBrow Day 22"></div>
       <div class="cap">
-        <h3>Brazilian Waxing — Gentle & Private 🌸</h3>
-        <p class="body">Ladies only, always professional and discreet. Brazilian waxing done right with minimal discomfort. You deserve to feel confident. 📍11360 Montwood Dr · 📞915.867.1989.</p>
-        <div class="copybox"><b>FB Copy</b><br>Brazilian Waxing — Gentle & Private 🌸<br><br>Ladies only, always professional and discreet. Brazilian waxing done right with minimal discomfort. You deserve to feel confident. 📍11360 Montwood Dr · 📞915.867.1989.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Brazilian Waxing — Gentle & Private 🌸
+
+Ladies only, always professional and discreet. Brazilian waxing done right with minimal discomfort. You deserve to feel confident. 📍11360 Montwood Dr · 📞915.867.1989.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="22" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="22" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -486,9 +513,11 @@
       <div class="day">DAY 23</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day23.png" alt="Stylish iBrow Day 23"></div>
       <div class="cap">
-        <h3>BROW TUESDAY $12 — Every Week</h3>
-        <p class="body">Your weekly brow fix is here. $12 threading, walk-ins welcome, no appointment. Set your arches straight (pun intended).</p>
-        <div class="copybox"><b>FB Copy</b><br>BROW TUESDAY $12 — Every Week<br><br>Your weekly brow fix is here. $12 threading, walk-ins welcome, no appointment. Set your arches straight (pun intended).<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>BROW TUESDAY $12 — Every Week
+
+Your weekly brow fix is here. $12 threading, walk-ins welcome, no appointment. Set your arches straight (pun intended).
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="23" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="23" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -501,9 +530,11 @@
       <div class="day">DAY 24</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day24.png" alt="Stylish iBrow Day 24"></div>
       <div class="cap">
-        <h3>Honest Prices, No Surprises 💵</h3>
-        <p class="body">Threading $14 · Lamination $45 · Gel $30 · Waxing from $12. Clear menus, fair rates. Beauty without the guesswork.</p>
-        <div class="copybox"><b>FB Copy</b><br>Honest Prices, No Surprises 💵<br><br>Threading $14 · Lamination $45 · Gel $30 · Waxing from $12. Clear menus, fair rates. Beauty without the guesswork.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Honest Prices, No Surprises 💵
+
+Threading $14 · Lamination $45 · Gel $30 · Waxing from $12. Clear menus, fair rates. Beauty without the guesswork.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="24" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="24" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -516,9 +547,11 @@
       <div class="day">DAY 25</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day25.png" alt="Stylish iBrow Day 25"></div>
       <div class="cap">
-        <h3>Expert Hands, Gentle Touch</h3>
-        <p class="body">Our technicians train for precision and comfort. Nervous about threading? You're in calm, capable hands. Book with confidence.</p>
-        <div class="copybox"><b>FB Copy</b><br>Expert Hands, Gentle Touch<br><br>Our technicians train for precision and comfort. Nervous about threading? You're in calm, capable hands. Book with confidence.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Expert Hands, Gentle Touch
+
+Our technicians train for precision and comfort. Nervous about threading? You're in calm, capable hands. Book with confidence.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="25" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="25" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -531,9 +564,11 @@
       <div class="day">DAY 26</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day26.png" alt="Stylish iBrow Day 26"></div>
       <div class="cap">
-        <h3>15% OFF New Clients — Call Now 📞</h3>
-        <p class="body">First visit? Code IBROW15. Walk-ins welcome, same-day spots often open. 915.867.1989 — your brows will thank you.</p>
-        <div class="copybox"><b>FB Copy</b><br>15% OFF New Clients — Call Now 📞<br><br>First visit? Code IBROW15. Walk-ins welcome, same-day spots often open. 915.867.1989 — your brows will thank you.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>15% OFF New Clients — Call Now 📞
+
+First visit? Code IBROW15. Walk-ins welcome, same-day spots often open. 915.867.1989 — your brows will thank you.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="26" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="26" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -546,9 +581,11 @@
       <div class="day">DAY 27</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day27.png" alt="Stylish iBrow Day 27"></div>
       <div class="cap">
-        <h3>Toe BBL — Sculpted, Pretty Feet 🦶</h3>
-        <p class="body">Our Toe BBL reshapes and polishes for flawless, camera-ready toes. Pair it with a Jelly Pedicure. Walk in, leave glowing.</p>
-        <div class="copybox"><b>FB Copy</b><br>Toe BBL — Sculpted, Pretty Feet 🦶<br><br>Our Toe BBL reshapes and polishes for flawless, camera-ready toes. Pair it with a Jelly Pedicure. Walk in, leave glowing.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Toe BBL — Sculpted, Pretty Feet 🦶
+
+Our Toe BBL reshapes and polishes for flawless, camera-ready toes. Pair it with a Jelly Pedicure. Walk in, leave glowing.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="27" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="27" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -561,9 +598,11 @@
       <div class="day">DAY 28</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day28.png" alt="Stylish iBrow Day 28"></div>
       <div class="cap">
-        <h3>Lash Clusters — Soft, Full, You 💫</h3>
-        <p class="body">Customizable lash clusters for a fluffy, natural look in one visit. No glue damage, all glow. Add them to your brow day!</p>
-        <div class="copybox"><b>FB Copy</b><br>Lash Clusters — Soft, Full, You 💫<br><br>Customizable lash clusters for a fluffy, natural look in one visit. No glue damage, all glow. Add them to your brow day!<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Lash Clusters — Soft, Full, You 💫
+
+Customizable lash clusters for a fluffy, natural look in one visit. No glue damage, all glow. Add them to your brow day!
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="28" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="28" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -576,9 +615,11 @@
       <div class="day">DAY 29</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day29.png" alt="Stylish iBrow Day 29"></div>
       <div class="cap">
-        <h3>Head & Scalp Massage — Pure Calm 🧖</h3>
-        <p class="body">Melt stress with our natural-oil scalp massage. Wellness isn't a luxury — it's self-care. Add it to any service.</p>
-        <div class="copybox"><b>FB Copy</b><br>Head & Scalp Massage — Pure Calm 🧖<br><br>Melt stress with our natural-oil scalp massage. Wellness isn't a luxury — it's self-care. Add it to any service.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>Head & Scalp Massage — Pure Calm 🧖
+
+Melt stress with our natural-oil scalp massage. Wellness isn't a luxury — it's self-care. Add it to any service.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="29" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="29" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -591,9 +632,11 @@
       <div class="day">DAY 30</div>
       <div class="imgwrap"><img loading="lazy" draggable="false" oncontextmenu="return false;" onclick="openLight(this.src)" src="images/day30.png" alt="Stylish iBrow Day 30"></div>
       <div class="cap">
-        <h3>30 Days, 30 Smiles — Thank You, El Paso 💕</h3>
-        <p class="body">We celebrated a month of beauty with you. New clients still get 15% OFF. Book yours and join the Stylish iBrow family.</p>
-        <div class="copybox"><b>FB Copy</b><br>30 Days, 30 Smiles — Thank You, El Paso 💕<br><br>We celebrated a month of beauty with you. New clients still get 15% OFF. Book yours and join the Stylish iBrow family.<br><br>📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
+        <div class="copybox"><b>FB Copy</b><br>30 Days, 30 Smiles — Thank You, El Paso 💕
+
+We celebrated a month of beauty with you. New clients still get 15% OFF. Book yours and join the Stylish iBrow family.
+
+📍11360 Montwood Dr Ste G, El Paso · 📞915.867.1989 · Walk-ins welcome!</div>
         <div class="actions">
           <button class="btn ok" data-day="30" data-type="post" onclick="approve(this)">✓ Approve</button>
           <button class="btn no" data-day="30" data-type="post" onclick="changes(this)">✎ Request Changes</button>
@@ -623,18 +666,12 @@ const SUPABASE_URL="https://nmykwwhpjukmlzhaimuu.supabase.co";
 const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5teWt3d2hwanVrbWx6aGFpbXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwMTc3NzAsImV4cCI6MjEwMDU5Mzc3MH0.XAnVz_2Z8YpHYqSK8u_mYeS5o__ULVwi9SqqByVpE_o";
 const CLIENT="Stylish iBrow";
 const CAMPAIGN="30-Day Facebook Content + Month Ads";
-const state={}; // clave "type-day" -> decision
-
+const state={};
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600);}
-function updCounters(){
-  let a=0,c=0; for(const k in state){ if(state[k]==="approved")a++; else if(state[k]==="changes")c++; }
-  document.getElementById("cntAppr").textContent=a;
-  document.getElementById("cntChg").textContent=c;
-}
+function updCounters(){let a=0,c=0;for(const k in state){if(state[k]==="approved")a++;else if(state[k]==="changes")c++;}document.getElementById("cntAppr").textContent=a;document.getElementById("cntChg").textContent=c;}
 function openLight(src){const l=document.getElementById("lightbox");document.getElementById("lightImg").src=src;l.classList.add("open");document.body.style.overflow="hidden";}
 function closeLight(e){if(e.target.id!=="lightImg"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow="";}}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow="";}});
-
 async function save(btn, decision){
   const day=btn.dataset.day, type=btn.dataset.type;
   const ta=document.getElementById("notes-"+type+"-"+day);
@@ -647,27 +684,14 @@ async function save(btn, decision){
 }
 function approve(b){save(b,"approved");}
 function changes(b){save(b,"changes");}
-
 async function sendReview(){
   const approved=[], changesList=[];
-  for(const k in state){
-    const [type,day]=k.split("-");
-    const comment=(document.getElementById("notes-"+k)||{value:""}).value.trim();
-    if(state[k]==="approved") approved.push({type,day:Number(day)});
-    else if(state[k]==="changes") changesList.push({type,day:Number(day),note:comment});
-  }
-  if(approved.length===0 && changesList.length===0){
-    if(!confirm("No has marcado ninguna tarjeta. ¿Enviar revisión vacía?")) return;
-  }
-  const btn=document.querySelector(".btn.send"); btn.disabled=true;
-  const review={ decision:"review_complete", approved, changes:changesList, totals:{approved:approved.length,changes:changesList.length}, submitted_at:new Date().toISOString() };
-  try{
-    const r=await fetch(SUPABASE_URL+"/rest/v1/approvals",{method:"POST",headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},body:JSON.stringify({client:CLIENT,campaign:CAMPAIGN,client_name:CLIENT,review})});
-    if(!r.ok) throw new Error("HTTP "+r.status);
-    toast("✓ Revisión completa enviada ("+approved.length+" aprobadas, "+changesList.length+" con cambios)");
-  }catch(e){ toast("❌ "+e.message); btn.disabled=false; }
+  for(const k in state){const [type,day]=k.split("-");const comment=(document.getElementById("notes-"+k)||{value:""}).value.trim();if(state[k]==="approved")approved.push({type,day:Number(day)});else if(state[k]==="changes")changesList.push({type,day:Number(day),note:comment});}
+  if(approved.length===0 && changesList.length===0){if(!confirm("No has marcado ninguna tarjeta. ¿Enviar revisión vacía?"))return;}
+  const btn=document.querySelector(".btn.send");btn.disabled=true;
+  const review={decision:"review_complete",approved,changes:changesList,totals:{approved:approved.length,changes:changesList.length},submitted_at:new Date().toISOString()};
+  try{const r=await fetch(SUPABASE_URL+"/rest/v1/approvals",{method:"POST",headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},body:JSON.stringify({client:CLIENT,campaign:CAMPAIGN,client_name:CLIENT,review})});if(!r.ok)throw new Error("HTTP "+r.status);toast("✓ Revisión completa enviada ("+approved.length+" aprobadas, "+changesList.length+" con cambios)");}catch(e){toast("❌ "+e.message);btn.disabled=false;}
 }
-
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=(i%4*50)+"ms";io.observe(el);});
 </script>
